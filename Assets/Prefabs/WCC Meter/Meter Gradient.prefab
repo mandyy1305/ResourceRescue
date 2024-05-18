@@ -101,6 +101,7 @@ MonoBehaviour:
   speed: 4
   distance: 5.4
   targetObject: {fileID: 6623842972100021558}
+  offset: 0
 --- !u!1 &6623842972100021558
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,8 +204,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 100
   height: 100
-  darkestColor: {r: 1, g: 0, b: 0, a: 1}
-  intensityColor: {r: 0, g: 0, b: 0, a: 1}
+  darkestColor: {r: 0.24705882, g: 0.3019608, b: 0.80784315, a: 1}
+  intensityColor: {r: 0.05882353, g: 0.015686275, b: 0.015686275, a: 1}
 --- !u!114 &1053464699261461213
 MonoBehaviour:
   m_ObjectHideFlags: 0
