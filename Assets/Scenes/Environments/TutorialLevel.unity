@@ -558,6 +558,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a3afc2cce5034a4db1c7ab9573f9358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &167689758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 167689759}
+  - component: {fileID: 167689760}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &167689759
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167689758}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.30351067, y: -1.7297384, z: 5.2813764}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &167689760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167689758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc72c30ca253b442854bfc9ced339e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleManagerPrefab: {fileID: 1412101001}
 --- !u!1 &175221742
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,7 +1069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec20dae31870e4f4db355227911b1f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceCanvas: {fileID: 565188374}
+  resourceCanvas: {fileID: 1871296003}
   interactableCanvas: {fileID: 433138108}
 --- !u!1 &350068893
 GameObject:
@@ -1649,12 +1694,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 559992534}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &565188374 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8157882586986421801, guid: 57a1ac2332e7b6e459f9f14348baab9e,
-    type: 3}
-  m_PrefabInstance: {fileID: 529532410}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &569525161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,7 +1964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f8d35ff7cd392408ee11555abbba9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceCanvas: {fileID: 565188374}
+  resourceCanvas: {fileID: 1871296003}
   interactableCanvas: {fileID: 433138108}
 --- !u!114 &654145379
 MonoBehaviour:
@@ -2558,6 +2597,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771171980}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &813593468 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8122352174486215243, guid: a626ba02c753c764d9ec47a778292dd8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1445886101}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &813593474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813593468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3187aa12eb4921a408c0ee64366d51b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &868959291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3674,6 +3731,7 @@ GameObject:
   - component: {fileID: 1412101004}
   - component: {fileID: 1412101003}
   - component: {fileID: 1412101002}
+  - component: {fileID: 1412101007}
   m_Layer: 0
   m_Name: Geyser
   m_TagString: Untagged
@@ -3693,7 +3751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7660f264a9e88944bb54b53541744ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzle: {fileID: 5477551299630833663, guid: c7917c0ddb3e7a74cb9671a3b339810c, type: 3}
+  puzzle: {fileID: 3941585404884025426, guid: 9ef1430dc327c0844a6f5de376474a8d, type: 3}
   puzzleCam: {fileID: 0}
 --- !u!65 &1412101003
 BoxCollider:
@@ -3775,12 +3833,26 @@ Transform:
   m_GameObject: {fileID: 1412101001}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.87, y: 0.829, z: 8.33}
+  m_LocalPosition: {x: -13.87, y: 0.829, z: 12.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1412101007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412101001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 202b0b79bd76e9544b53d4915bfe332b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceCanvas: {fileID: 1871296003}
+  interactableCanvas: {fileID: 433138108}
 --- !u!1001 &1445886101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3852,7 +3924,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8122352174486215243, guid: a626ba02c753c764d9ec47a778292dd8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 813593474}
   m_SourcePrefab: {fileID: 100100000, guid: a626ba02c753c764d9ec47a778292dd8, type: 3}
 --- !u!4 &1471714160 stripped
 Transform:
@@ -4050,6 +4126,7 @@ GameObject:
   - component: {fileID: 1512619770}
   - component: {fileID: 1512619769}
   - component: {fileID: 1512619768}
+  - component: {fileID: 1512619773}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -4069,7 +4146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7660f264a9e88944bb54b53541744ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzle: {fileID: 5477551299630833663, guid: c7917c0ddb3e7a74cb9671a3b339810c, type: 3}
+  puzzle: {fileID: 987312375473708487, guid: 05c9db869b381f646a1a4351c1ad6103, type: 3}
   puzzleCam: {fileID: 0}
 --- !u!65 &1512619769
 BoxCollider:
@@ -4151,12 +4228,26 @@ Transform:
   m_GameObject: {fileID: 1512619767}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.87, y: 0.829, z: 8.33}
+  m_LocalPosition: {x: -9.06, y: 0.829, z: 16.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1512619773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512619767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db2123e8b96ce843ac0c8ec7a147286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceCanvas: {fileID: 1871296003}
+  interactableCanvas: {fileID: 433138108}
 --- !u!1001 &1522847918
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5156,6 +5247,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1856411235}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1871296003 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8986082930709787814, guid: 57a1ac2332e7b6e459f9f14348baab9e,
+    type: 3}
+  m_PrefabInstance: {fileID: 529532410}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1873276592 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2331766017440812669, guid: 1e4361cb43bee4743aca83b785dad401,
@@ -6003,3 +6100,4 @@ SceneRoots:
   - {fileID: 1412101006}
   - {fileID: 1512619772}
   - {fileID: 1335796207}
+  - {fileID: 167689759}

@@ -14,6 +14,7 @@ public class Geyser : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && m_CanInteract && !isFixed)
         {
             //m_Puzzle.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
             GetComponent<InstantiatePuzzle>().InstantiatePuzzleType(0f);
             resourceCanvas.GetComponent<Canvas>().enabled = false;
             interactableCanvas.GetComponent<Canvas>().enabled = false;
