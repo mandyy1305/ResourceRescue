@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Faucet : MonoBehaviour
+public class Cylinder : MonoBehaviour
 {
     private bool m_CanInteract;
     public GameObject resourceCanvas;
@@ -15,7 +15,7 @@ public class Faucet : MonoBehaviour
         {
             //m_Puzzle.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
-            GetComponent<InstantiatePuzzle>().InstantiatePuzzleType(-50f);
+            GetComponent<InstantiatePuzzle>().InstantiatePuzzleType(0f);
             resourceCanvas.GetComponent<Canvas>().enabled = false;
             interactableCanvas.GetComponent<Canvas>().enabled = false;
         }
@@ -25,7 +25,7 @@ public class Faucet : MonoBehaviour
     {
         if (other.TryGetComponent(out Player player) && !isFixed)
         {
-            if(!interactableCanvas.GetComponent<Canvas>().enabled)
+            if (!interactableCanvas.GetComponent<Canvas>().enabled)
             {
                 interactableCanvas.GetComponent<Canvas>().enabled = true;
             }
@@ -43,3 +43,4 @@ public class Faucet : MonoBehaviour
         }
     }
 }
+

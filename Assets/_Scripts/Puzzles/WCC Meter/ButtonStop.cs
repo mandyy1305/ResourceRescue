@@ -9,6 +9,7 @@ public class ButtonStop : MonoBehaviour
 
     private void OnMouseDown()
     {
+        Debug.Log("Yeha");
         OnClickButton?.Invoke();
     }
 }

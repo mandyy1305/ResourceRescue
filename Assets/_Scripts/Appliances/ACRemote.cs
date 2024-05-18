@@ -14,7 +14,8 @@ public class ACRemote : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && m_CanInteract && !isFixed)
         {
             //m_Puzzle.SetActive(true);
-            GetComponent<InstantiatePuzzle>().InstantiatePuzzleType();
+            Cursor.lockState = CursorLockMode.None;
+            GetComponent<InstantiatePuzzle>().InstantiatePuzzleType(0f);
             resourceCanvas.GetComponent<Canvas>().enabled = false;
             interactableCanvas.GetComponent<Canvas>().enabled = false;
         }
@@ -24,6 +25,10 @@ public class ACRemote : MonoBehaviour
     {
         if (other.TryGetComponent(out Player player) && !isFixed)
         {
+            if (!interactableCanvas.GetComponent<Canvas>().enabled)
+            {
+                interactableCanvas.GetComponent<Canvas>().enabled = true;
+            }
             UIManager.Instance.ShowInteractUI(true);
             m_CanInteract = true;
         }

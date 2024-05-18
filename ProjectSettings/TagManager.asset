@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PuzzleCamera
   - Interact
+  - Line
   layers:
   - Default
   - TransparentFX

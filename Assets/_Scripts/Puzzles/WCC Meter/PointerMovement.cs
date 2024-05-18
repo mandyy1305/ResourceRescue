@@ -32,7 +32,7 @@ public class PointerMovement : MonoBehaviour
         Color color = gradientTexture.GetPixel(textureX, 0);
         float score = color.r; // The red component represents the intensity
 
-        score = Mathf.Round(score * 10);
+        score = Mathf.Round(score * 50);
 
         GlobalManager.score += score;
         Debug.Log("Score: " + GlobalManager.score);
