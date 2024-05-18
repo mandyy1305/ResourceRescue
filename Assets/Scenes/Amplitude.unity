@@ -131,25 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2176986048620483395, guid: c7917c0ddb3e7a74cb9671a3b339810c,
-        type: 3}
-      propertyPath: m_Name
-      value: Sine Curve Random
-      objectReference: {fileID: 0}
-    - target: {fileID: 2594028345893235605, guid: c7917c0ddb3e7a74cb9671a3b339810c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5477551299630833663, guid: c7917c0ddb3e7a74cb9671a3b339810c,
         type: 3}
       propertyPath: m_Name
       value: SineWaveAmplitude
-      objectReference: {fileID: 0}
-    - target: {fileID: 7975581612861528550, guid: c7917c0ddb3e7a74cb9671a3b339810c,
-        type: 3}
-      propertyPath: m_Name
-      value: Sine Curve Base
       objectReference: {fileID: 0}
     - target: {fileID: 8589409314626622368, guid: c7917c0ddb3e7a74cb9671a3b339810c,
         type: 3}
@@ -204,41 +189,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5477551299630833663, guid: c7917c0ddb3e7a74cb9671a3b339810c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 683939118}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7917c0ddb3e7a74cb9671a3b339810c, type: 3}
---- !u!1 &516248745 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2176986048620483395, guid: c7917c0ddb3e7a74cb9671a3b339810c,
-    type: 3}
-  m_PrefabInstance: {fileID: 371634572}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &683939116 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5477551299630833663, guid: c7917c0ddb3e7a74cb9671a3b339810c,
-    type: 3}
-  m_PrefabInstance: {fileID: 371634572}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &683939118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 683939116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 606c579a4744f6f439199250fac5ab04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseSine: {fileID: 1111105650}
-  randomSine: {fileID: 516248745}
-  totalTime: 1
-  remainingTime: 0
-  isCountingDown: 0
 --- !u!1 &710104496
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,12 +328,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!1 &1111105650 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7975581612861528550, guid: c7917c0ddb3e7a74cb9671a3b339810c,
-    type: 3}
-  m_PrefabInstance: {fileID: 371634572}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2141501340
 GameObject:
   m_ObjectHideFlags: 0

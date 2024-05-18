@@ -5,18 +5,24 @@ using UnityEngine;
 public class DestroyOnClick : MonoBehaviour
 {
     public GameObject meter;
-    void Update()
+    private void OnEnable()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            StartCoroutine(DelayInstantiate());
-        }
+        ButtonStop.OnClickButton += ButtonStop_OnClickButton;
+    }
+    private void OnDisable()
+    {
+        ButtonStop.OnClickButton -= ButtonStop_OnClickButton;
+    }
+
+    private void ButtonStop_OnClickButton()
+    {
+        StartCoroutine(DelayInstantiate());
     }
 
     IEnumerator DelayInstantiate()
     {
-        yield return new WaitForSeconds(1f);
-        Instantiate(meter);
+        yield return new WaitForSeconds(0.6f);
+        Instantiate(meter, transform.parent);
         Destroy(gameObject);
     }
 }
