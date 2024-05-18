@@ -8,6 +8,7 @@ public class SliderHandle : MonoBehaviour
     public float minValue = 0f; // Minimum slider value
     public float maxValue = 1f; // Maximum slider value
     public static bool isSelected = false;
+    public Camera cam;
 
     private bool isDragging = false;
     private float trackStartX;
@@ -63,6 +64,8 @@ public class SliderHandle : MonoBehaviour
             return;
         }
 
+        cam = GameObject.FindGameObjectWithTag("PuzzleCamera").GetComponent<Camera>();
+
         // Calculate the start and end positions of the track in local coordinates
         float trackWidth = sliderTrack.GetComponent<SpriteRenderer>().bounds.size.x;
         trackStartX = sliderTrack.position.x - trackWidth / 2;
@@ -84,7 +87,7 @@ public class SliderHandle : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
         if (GetComponent<Collider2D>().OverlapPoint(mousePos))
         {
@@ -102,7 +105,7 @@ public class SliderHandle : MonoBehaviour
 
     void DragSlider()
     {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
 
         float clampedX = Mathf.Clamp(mousePosition.x, trackStartX, trackEndX);
