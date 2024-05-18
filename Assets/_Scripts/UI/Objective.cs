@@ -24,6 +24,7 @@ public enum ObjectiveType
 {
     TurnOffLights,
     TurnOffACs,
+    PreventWaterLeak,
 }
 
 
