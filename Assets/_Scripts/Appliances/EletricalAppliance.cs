@@ -19,6 +19,11 @@ public class EletricalAppliance : MonoBehaviour
         return m_IsOn;
     }
 
+    public float GetCostPerSecond()
+    {
+        return m_CostPerSecond;
+    }
+
     protected virtual void Update()
     {
         if (m_IsOn)

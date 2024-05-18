@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         m_InteractUI.SetActive(false);
+        m_ObjectivesAndSummaryUI.SetActive(false);
     }
 
     private void Update()
@@ -27,6 +28,11 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             ShowObjectivesAndSummaryUI(!m_ObjectivesAndSummaryUI.activeInHierarchy);
+
+            if (m_ObjectivesAndSummaryUI.activeInHierarchy)
+            {
+                SummaryManager.Instance.RefreshSummary();
+            }
         }
     }
 
