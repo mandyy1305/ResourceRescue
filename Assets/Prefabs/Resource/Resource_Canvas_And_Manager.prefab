@@ -2064,7 +2064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a9a6d3055dce344b1d16921e820bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Budget: 1000
+  m_Budget: 2000
   m_CurrentBudget: 0
   m_WaterBill: 0
   m_GasBill: 0
