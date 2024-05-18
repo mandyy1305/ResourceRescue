@@ -114,7 +114,7 @@ public class SliderHandle : MonoBehaviour
         // Calculate the slider value based on handle position
         float sliderValue = CalculateSliderValue(clampedX);
         //sliderValue = Mathf.Round(sliderValue);
-        //Debug.Log("Slider Value: " + sliderValue);
+        Debug.Log("Slider Value: " + sliderValue);
 
         OnSliderChange?.Invoke(property, sliderValue);
     }
