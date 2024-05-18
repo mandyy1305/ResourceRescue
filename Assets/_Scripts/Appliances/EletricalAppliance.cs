@@ -19,7 +19,7 @@ public class EletricalAppliance : MonoBehaviour
         return m_IsOn;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (m_IsOn)
         {

@@ -14,6 +14,11 @@ public class Bulb : EletricalAppliance
         m_Material = GetComponent<Renderer>().material;
     }
 
+    protected override void Update()
+    {
+        base.Update();
+    }
+
     public override void SetState(bool state)
     {
         base.SetState(state);
