@@ -12,7 +12,7 @@ public class InstantiatePuzzle : MonoBehaviour
     {
         puzzleCam = GameObject.FindGameObjectWithTag("PuzzleCamera").GetComponent<Camera>();
     }
-    public void InstantiatePuzzleType()
+    public void InstantiatePuzzleType(float xPos)
     {
         Instantiate(puzzle, new Vector3(-50f, 0f, 4f), Quaternion.identity, null);   
         ChangeCameraSettings();

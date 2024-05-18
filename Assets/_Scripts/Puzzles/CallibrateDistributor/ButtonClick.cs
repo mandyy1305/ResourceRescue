@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class ButtonClick : MonoBehaviour
 {
@@ -11,10 +12,19 @@ public class ButtonClick : MonoBehaviour
     private bool stopRotating = false;
     public static int stopped = 0;
 
+
+    public GameObject resourceCanvas;
+    public Camera puzzleCam;
+    public Camera main;
+
     private void Start()
     {
         pivot.transform.eulerAngles = Vector3.zero;
         stopped = 0;
+
+        resourceCanvas = FindAnyObjectByType<ResourceManager>().gameObject;
+        puzzleCam = GameObject.FindGameObjectWithTag("PuzzleCamera").GetComponent<Camera>();
+        main = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
     private void Update()
     {
@@ -26,6 +36,7 @@ public class ButtonClick : MonoBehaviour
         {
             // puzzle solved
             Debug.Log("Puzzle Solved");
+            StartCoroutine(Success());
         }
     }
 
@@ -43,4 +54,15 @@ public class ButtonClick : MonoBehaviour
             Destroy(gameObject.transform.parent.parent.gameObject);
         }
     }
+
+    private IEnumerator Success()
+    {
+        yield return new WaitForSeconds(0.6f);
+        main.enabled = true;
+        puzzleCam.gameObject.GetComponent<Camera>().enabled = false;
+        resourceCanvas.GetComponent<Canvas>().enabled = true;
+        Faucet.isFixed = true;
+        Destroy(transform.parent.gameObject);
+    }
 }
+

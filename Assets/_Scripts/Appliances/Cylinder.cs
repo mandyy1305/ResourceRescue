@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ACRemote : MonoBehaviour
+public class Cylinder : MonoBehaviour
 {
     private bool m_CanInteract;
     public GameObject resourceCanvas;
@@ -42,3 +42,4 @@ public class ACRemote : MonoBehaviour
         }
     }
 }
+
