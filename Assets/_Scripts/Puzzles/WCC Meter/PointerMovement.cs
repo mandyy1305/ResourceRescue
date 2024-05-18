@@ -7,11 +7,14 @@ public class PointerMovement : MonoBehaviour
     public float distance = 5.4f; // Maximum distance from the starting position
     public GameObject targetObject; // The gradient object
     public float offset;
+    public GameObject fill;
 
     private Vector3 startPosition;
     private float phase = 0.0f; // Phase of the oscillation
     private bool isMoving = true; // To track if the pendulum should move
     private Texture2D gradientTexture;
+
+
 
     private void OnEnable()
     {
@@ -32,9 +35,11 @@ public class PointerMovement : MonoBehaviour
         Color color = gradientTexture.GetPixel(textureX, 0);
         float score = color.r; // The red component represents the intensity
 
-        score = Mathf.Round(score * 50);
+        score = Mathf.Round(score * 40);
 
         GlobalManager.score += score;
+        float yScale = Mathf.Clamp(GlobalManager.score / 27.0f, 0f, 1f);
+        fill.transform.localScale = new Vector3(1, yScale, 1);
         Debug.Log("Score: " + GlobalManager.score);
         isMoving = false;
     }

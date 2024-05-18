@@ -62,7 +62,7 @@ public class ButtonClick : MonoBehaviour
         puzzleCam.gameObject.GetComponent<Camera>().enabled = false;
         resourceCanvas.GetComponent<Canvas>().enabled = true;
         Cylinder.isFixed = true;
-        Destroy(transform.parent.gameObject);
+        Destroy(transform.parent.parent.gameObject);
     }
 }
 
