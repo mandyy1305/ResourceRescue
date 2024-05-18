@@ -41,12 +41,13 @@ public class MatchFrequencyChecker : MonoBehaviour
     {
         if (!SliderHandle.isSelected && isCountingDown)
         {
+
             remainingTime -= Time.deltaTime;
 
             //match the values
-            bool am = Mathf.Abs(amBase - amRandom) < 0.2f;
-            bool fr = Mathf.Abs(frBase - frRandom) < 0.2f;
-            bool sp = Mathf.Abs(spBase - spRandom) < 0.2f;
+            bool am = Mathf.Abs(amBase - amRandom) < 0.3f;
+            bool fr = Mathf.Abs(frBase - frRandom) < 0.3f;
+            bool sp = Mathf.Abs(spBase - spRandom) < 0.3f;
 
             if(!am || !fr || !sp)
             {

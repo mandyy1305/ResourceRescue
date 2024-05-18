@@ -1,53 +1,38 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 
 public class Dot : MonoBehaviour
 {
-    public Dot[] connectedDots; // Array of dots that can be connected to this dot
-    public Dictionary<Dot, LineRenderer> connectionLines = new Dictionary<Dot, LineRenderer>();
+    public List<Dot> connectedDots = new List<Dot>();
+    public Dictionary<Dot, bool> visitedConnections = new Dictionary<Dot, bool>();
 
     void Start()
     {
-        foreach (Dot dot in connectedDots)
+        // Initialize the dictionary with all connected dots set to false (not visited)
+        foreach (var dot in connectedDots)
         {
-            LineRenderer lineRenderer = CreateLineRenderer();
-            connectionLines[dot] = lineRenderer;
-            DrawLine(lineRenderer, dot);
+            visitedConnections[dot] = false;
         }
     }
 
-    private LineRenderer CreateLineRenderer()
+    void OnMouseDown()
     {
-        GameObject lineObj = new GameObject("ConnectionLine");
-        LineRenderer lr = lineObj.AddComponent<LineRenderer>();
-        lr.startWidth = 0.1f;
-        lr.endWidth = 0.1f;
-        lr.material = new Material(Shader.Find("Sprites/Default"));
-        lr.startColor = Color.white;
-        lr.endColor = Color.white;
-        lr.useWorldSpace = true;
-        return lr;
+        PuzzleManager.Instance.OnDotSelected(this);
     }
 
-    private void DrawLine(LineRenderer lr, Dot targetDot)
+    // Mark a connection as visited
+    public void VisitConnection(Dot dot)
     {
-        lr.SetPosition(0, transform.position);
-        lr.SetPosition(1, targetDot.transform.position);
+        if (visitedConnections.ContainsKey(dot))
+        {
+            visitedConnections[dot] = true;
+            dot.visitedConnections[this] = true; // Ensure the reverse connection is also marked
+        }
     }
 
-    private void Update()
+    // Check if a connection has been visited
+    public bool IsConnectionVisited(Dot dot)
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-        if(Input.GetMouseButton(0))
-        {
-            if (FindObjectOfType<ShapeTracer>().IsTracing == false)
-            {
-                FindObjectOfType<ShapeTracer>().StartTracing(this);
-            }
-        }
+        return visitedConnections.ContainsKey(dot) && visitedConnections[dot];
     }
 }
