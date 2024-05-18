@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
 
     [SerializeField] private GameObject m_InteractUI;
+    [SerializeField] private GameObject m_ObjectivesAndSummaryUI;
 
     private void Awake()
     {
@@ -21,9 +22,22 @@ public class UIManager : MonoBehaviour
         m_InteractUI.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            ShowObjectivesAndSummaryUI(!m_ObjectivesAndSummaryUI.activeInHierarchy);
+        }
+    }
+
     public void ShowInteractUI(bool value)
     {
         m_InteractUI.SetActive(value);
+    }
+
+    public void ShowObjectivesAndSummaryUI(bool value)
+    {
+        m_ObjectivesAndSummaryUI.SetActive(value);
     }
     
 }

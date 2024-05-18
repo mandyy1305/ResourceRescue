@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Bulb : EletricalAppliance
@@ -31,6 +32,24 @@ public class Bulb : EletricalAppliance
         {
             m_Light.enabled = false;
             m_Material.DisableKeyword("_EMISSION");
+
+            if (AreAllLightsOff())
+            {
+                ObjectiveManager.Instance.CompleteObjective(ObjectiveType.TurnOffLights);
+            }
         }
+    }
+
+    public bool AreAllLightsOff()
+    {
+        List<Bulb> bulbs = FindObjectsOfType<Bulb>().ToList();
+
+        foreach (Bulb b in bulbs)
+        {
+            if (b.m_IsOn)
+                return false;
+        }
+
+        return true;
     }
 }
