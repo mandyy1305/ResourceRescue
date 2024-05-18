@@ -2,13 +2,11 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Interact();
-        }
-    }
+    private bool m_CanInteract;
+
+    private Switch m_InteractionSwitch;
+
+    
 
     private void Interact()
     {
@@ -21,5 +19,10 @@ public class PlayerInteraction : MonoBehaviour
                 interactable.Interact();
             }
         }
+    }
+
+    public void SetCanInteract(bool canInteract)
+    {
+        m_CanInteract = canInteract;
     }
 }

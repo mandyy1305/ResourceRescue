@@ -240,3 +240,4 @@ MonoBehaviour:
   m_CostPerSecond: 1
   m_IsOn: 1
   m_Light: {fileID: 393049408305325821}
+  m_Material: {fileID: 0}
