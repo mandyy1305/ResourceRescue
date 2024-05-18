@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void TakeInput()
     {
-        m_Input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
+        m_Input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
         
     }
 
