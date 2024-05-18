@@ -6,12 +6,25 @@ public class MatchFrequencyChecker : MonoBehaviour
 {
     public GameObject baseSine;
     public GameObject randomSine;
+    
+    public GameObject resourceCanvas;
+    public GameObject interactableCanvas;
+    public Camera puzzleCam;
+    public Camera main;
 
     private float amBase, frBase, spBase, amRandom, frRandom, spRandom;
 
     public float totalTime = 1f;
     public float remainingTime;
     public bool isCountingDown = false;
+
+    private void Start()
+    {
+        resourceCanvas = FindAnyObjectByType<ResourceManager>().gameObject;
+        interactableCanvas = GameObject.FindGameObjectWithTag("Interact");
+        puzzleCam = GameObject.FindGameObjectWithTag("PuzzleCamera").GetComponent<Camera>();
+        main = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+    }
 
     private void OnEnable()
     {
@@ -45,9 +58,9 @@ public class MatchFrequencyChecker : MonoBehaviour
             remainingTime -= Time.deltaTime;
 
             //match the values
-            bool am = Mathf.Abs(amBase - amRandom) < 0.3f;
-            bool fr = Mathf.Abs(frBase - frRandom) < 0.3f;
-            bool sp = Mathf.Abs(spBase - spRandom) < 0.3f;
+            bool am = Mathf.Abs(amBase - amRandom) < 0.6f;
+            bool fr = Mathf.Abs(frBase - frRandom) < 0.6f;
+            bool sp = Mathf.Abs(spBase - spRandom) < 0.6f;
 
             if(!am || !fr || !sp)
             {
@@ -61,6 +74,7 @@ public class MatchFrequencyChecker : MonoBehaviour
                 isCountingDown = false;
 
                 //Success
+                Success();
                 Debug.Log("Sines Matched");
             }
         }
@@ -74,6 +88,12 @@ public class MatchFrequencyChecker : MonoBehaviour
 
     private void Success()
     {
+        main.enabled = true;
+        puzzleCam.gameObject.GetComponent<Camera>().enabled = false;
+        resourceCanvas.GetComponent<Canvas>().enabled = true;
+        //interactableCanvas.GetComponent<Canvas>().enabled = true;
+        ACRemote.isFixed = true;
+        Destroy(gameObject);
         return;       
     }
 

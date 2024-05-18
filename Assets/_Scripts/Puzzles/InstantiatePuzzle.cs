@@ -12,10 +12,6 @@ public class InstantiatePuzzle : MonoBehaviour
     {
         puzzleCam = GameObject.FindGameObjectWithTag("PuzzleCamera").GetComponent<Camera>();
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        InstantiatePuzzleType();   
-    }
     public void InstantiatePuzzleType()
     {
         Instantiate(puzzle, new Vector3(-50f, 0f, 4f), Quaternion.identity, null);   
@@ -25,7 +21,7 @@ public class InstantiatePuzzle : MonoBehaviour
 
     void ChangeCameraSettings()
     {
-        Camera.main.gameObject.SetActive(false);
+        Camera.main.gameObject.GetComponent<Camera>().enabled = false;
         puzzleCam.gameObject.GetComponent<Camera>().enabled = true;
         return;
     }
