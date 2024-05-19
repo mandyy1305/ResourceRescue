@@ -43,6 +43,7 @@ public class TutorialUI : MonoBehaviour
     public void SetTutorialText(string text, float time)
     {
         m_TutorialUI.text = text;
+        m_Timer = 0;
         m_Time = time;
 
         m_IsTextSet = true;

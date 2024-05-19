@@ -17,7 +17,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/StringDisconnect.unity
     guid: 4509d2a8c9e964146a80a8eab16586b3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Environments/Level 3.unity
     guid: fc1ea0d891f22dd41b2016acaef19412
+  - enabled: 1
+    path: Assets/Scenes/Environments/TutorialLevel.unity
+    guid: ef124d7e74066194e922005401aad235
   m_configObjects: {}

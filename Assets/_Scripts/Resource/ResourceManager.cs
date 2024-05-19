@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ResourceManager : MonoBehaviour
@@ -95,7 +95,7 @@ public class ResourceManager : MonoBehaviour
 
     private void UpdateTexts()
     {
-        m_BudgetText.text = "$ " + (m_CurrentBudget / 4).ToString("F0");
+        m_BudgetText.text = "" + (m_CurrentBudget / 4).ToString("F0");
 
         m_WaterLeftText.text = (m_CurrentWaterAmount / m_MaxWaterCapacity * 100).ToString("F0") + " %";
         m_GasLeftText.text = (m_CurrentGasAmount / m_MaxGasCapacity * 100).ToString("F0") + " %";

@@ -1005,7 +1005,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3ca0eaa75571f2b49b6ae57043f93f97, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aba9ad6c68109da4895b15bb7e7c006a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1356,16 +1356,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a9a6d3055dce344b1d16921e820bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Budget: 2000
+  m_Budget: 8000
   m_CurrentBudget: 0
   m_WaterBill: 0
   m_GasBill: 0
+  m_AcCostPerSecond: 64
+  m_GeyserCostPerSecond: 32
   m_MaxWaterCapacity: 1000
   m_CurrentWaterAmount: 0
   m_WaterConsumption: 5
+  isWaterFixed: 0
   m_MaxGasCapacity: 30
   m_CurrentGasAmount: 0
   m_GasConsumption: 0.2
+  isGasFixed: 0
   m_BudgetText: {fileID: 3609902707928006768}
   m_WaterLeftText: {fileID: 5899544033301523448}
   m_GasLeftText: {fileID: 1265120059044859971}
