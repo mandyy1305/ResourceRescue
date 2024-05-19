@@ -33,6 +33,8 @@ public class GlobalManager : MonoBehaviour
         main.enabled = true;
         puzzleCam.gameObject.GetComponent<Camera>().enabled = false;
         resourceCanvas.GetComponent<Canvas>().enabled = true;
+        ObjectiveManager.Instance.CompleteObjective(ObjectiveType.PreventWaterLeak);
+        ResourceManager.Instance.isWaterFixed = true;
         Faucet.isFixed = true;
         Destroy(transform.parent.gameObject);
     }

@@ -13,6 +13,9 @@ public class ResourceManager : MonoBehaviour
 
     private bool m_GameOver;
 
+    [SerializeField] private int m_AcCostPerSecond;
+    [SerializeField] private int m_GeyserCostPerSecond;
+
     [Header("Water")]
     [Tooltip("Maximum water capacity in Liters")]
     [SerializeField]private float m_MaxWaterCapacity;     
@@ -21,6 +24,7 @@ public class ResourceManager : MonoBehaviour
     [Tooltip("Water consumption in Liters per second")]
     [SerializeField] private float m_WaterConsumption;    
     private bool m_WaterExhaustedEventTriggered;
+    public bool isWaterFixed = false;
 
     [Header("Gas")]
     [Tooltip("Maximum gas capacity in Liters")]
@@ -30,6 +34,7 @@ public class ResourceManager : MonoBehaviour
     [Tooltip("Gas consumption in Liters per second")]
     [SerializeField] private float m_GasConsumption;      
     private bool m_GasExhaustedEventTriggered;
+    public bool isGasFixed = false;
 
     [Header("UI")]
     [Header("Texts")]
@@ -76,11 +81,21 @@ public class ResourceManager : MonoBehaviour
         ValidateData();
         UpdateData();
         UpdateForegrounds();
+
+        if (!ACRemote.isFixed)
+        {
+            DecreaseBudget(m_AcCostPerSecond * Time.deltaTime);
+        }
+
+        if (!Geyser.isFixed)
+        {
+            DecreaseBudget(m_GeyserCostPerSecond * Time.deltaTime);
+        }
     }
 
     private void UpdateTexts()
     {
-        m_BudgetText.text = "$ " + m_CurrentBudget.ToString("F0");
+        m_BudgetText.text = "$ " + (m_CurrentBudget / 4).ToString("F0");
 
         m_WaterLeftText.text = (m_CurrentWaterAmount / m_MaxWaterCapacity * 100).ToString("F0") + " %";
         m_GasLeftText.text = (m_CurrentGasAmount / m_MaxGasCapacity * 100).ToString("F0") + " %";
@@ -122,8 +137,11 @@ public class ResourceManager : MonoBehaviour
     
     private void UpdateData()
     {
-        m_CurrentWaterAmount -= m_WaterConsumption * Time.deltaTime;
-        m_CurrentGasAmount -= m_GasConsumption * Time.deltaTime;
+        if (!Cylinder.isFixed)
+            m_CurrentGasAmount -= m_GasConsumption * Time.deltaTime;
+
+        if (!Faucet.isFixed)   
+            m_CurrentWaterAmount -= m_WaterConsumption * Time.deltaTime;
     }
 
     private void UpdateForegrounds()

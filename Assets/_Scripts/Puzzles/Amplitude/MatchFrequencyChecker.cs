@@ -93,6 +93,9 @@ public class MatchFrequencyChecker : MonoBehaviour
         resourceCanvas.GetComponent<Canvas>().enabled = true;
         //interactableCanvas.GetComponent<Canvas>().enabled = true;
         ACRemote.isFixed = true;
+        SummaryManager.Instance.activeACs--;
+        SummaryManager.Instance.RefreshSummary();
+        ObjectiveManager.Instance.CompleteObjective(ObjectiveType.TurnOffACs);
         Destroy(gameObject);
         return;       
     }

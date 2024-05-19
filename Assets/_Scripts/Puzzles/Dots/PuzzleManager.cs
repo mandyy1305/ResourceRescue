@@ -141,6 +141,9 @@ public class PuzzleManager : MonoBehaviour
         main.enabled = true;
         puzzleCam.gameObject.GetComponent<Camera>().enabled = false;
         resourceCanvas.GetComponent<Canvas>().enabled = true;
+        SummaryManager.Instance.activeGeysers--;
+        SummaryManager.Instance.RefreshSummary();
+        ObjectiveManager.Instance.CompleteObjective(ObjectiveType.TurnOffGeysers);
         Geyser.isFixed = true;
         Destroy(transform.parent.gameObject);
     }

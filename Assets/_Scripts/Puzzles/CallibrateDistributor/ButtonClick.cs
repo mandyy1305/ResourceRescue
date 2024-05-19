@@ -61,7 +61,10 @@ public class ButtonClick : MonoBehaviour
         main.enabled = true;
         puzzleCam.gameObject.GetComponent<Camera>().enabled = false;
         resourceCanvas.GetComponent<Canvas>().enabled = true;
+        ObjectiveManager.Instance.CompleteObjective(ObjectiveType.PreventGasLeak);
+        ResourceManager.Instance.isGasFixed = true;
         Cylinder.isFixed = true;
+
         Destroy(transform.parent.parent.gameObject);
     }
 }
